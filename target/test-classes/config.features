@@ -1,0 +1,5 @@
+browser=chrome
+environment=SIT
+GmoOnlineURL_SIT=http://demo.borland.com/gmopost/
+GmoOnlineURL_UAT=http://demoUAT.borland.com/gmopost/
+AlertURL=https://demoqa.com/alerts
