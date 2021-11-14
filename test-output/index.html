@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\MAHI\AppData\Local\Temp\testng-eclipse-599426160\testng-customsuite.xml</span>
+                    <span>C:\Users\MAHI\AppData\Local\Temp\testng-eclipse-479386622\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,6 +102,16 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.testNg.TestNgTestCasesPractice2" class="method navigator-link" hash-for-method="HandlingFrames">HandlingFrames</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.testNg.TestNgTestCasesPractice2" class="method navigator-link" hash-for-method="HandlingWindows">HandlingWindows</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.testNg.TestNgTestCasesPractice2" class="method navigator-link" hash-for-method="ValidateEnterGMOonline">ValidateEnterGMOonline</a> <!-- method navigator-link -->
@@ -137,6 +147,20 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="HandlingFrames">
+                  </a> <!-- HandlingFrames -->
+                  <span class="method-name">HandlingFrames</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="HandlingWindows">
+                  </a> <!-- HandlingWindows -->
+                  <span class="method-name">HandlingWindows</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="ValidateEnterGMOonline">
                   </a> <!-- ValidateEnterGMOonline -->
                   <span class="method-name">ValidateEnterGMOonline</span>
@@ -161,7 +185,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\MAHI\AppData\Local\Temp\testng-eclipse-599426160\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\MAHI\AppData\Local\Temp\testng-eclipse-479386622\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -210,24 +234,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'VerifyalertBox')
+data.setCell(0, 1, 'HandlingFrames')
 data.setCell(0, 2, 'com.testNg.TestNgTestCasesPractice2')
-data.setCell(0, 3, 15319);
+data.setCell(0, 3, 34984);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyTheCalculations')
+data.setCell(1, 1, 'VerifyalertBox')
 data.setCell(1, 2, 'com.testNg.TestNgTestCasesPractice2')
-data.setCell(1, 3, 5328);
+data.setCell(1, 3, 15241);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'ValidateEnterGMOonline')
+data.setCell(2, 1, 'HandlingWindows')
 data.setCell(2, 2, 'com.testNg.TestNgTestCasesPractice2')
-data.setCell(2, 3, 2707);
+data.setCell(2, 3, 5687);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyTheCalculations')
+data.setCell(3, 2, 'com.testNg.TestNgTestCasesPractice2')
+data.setCell(3, 3, 5003);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'ValidateEnterGMOonline')
+data.setCell(4, 2, 'com.testNg.TestNgTestCasesPractice2')
+data.setCell(4, 3, 2401);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -260,59 +292,83 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">38 ms</span>
+                <span class="method-start">25 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">7538 ms</span>
+                <span class="method-start">4876 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">7571 ms</span>
+                <span class="method-start">4895 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">ValidateEnterGMOonline</span>
-                <span class="method-start">7573 ms</span>
+                <span class="method-start">4901 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">10285 ms</span>
+                <span class="method-start">7307 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">10290 ms</span>
+                <span class="method-start">7315 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyalertBox</span>
-                <span class="method-start">10291 ms</span>
+                <span class="method-start">7316 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">25612 ms</span>
+                <span class="method-start">22559 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">verifyTheCalculations</span>
+                <span class="method-start">22561 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">22561 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">27565 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">25613 ms</span>
+                <span class="method-start">27566 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyTheCalculations</span>
-                <span class="method-start">25614 ms</span>
+                <span class="method-name">HandlingFrames</span>
+                <span class="method-start">27566 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">30945 ms</span>
+                <span class="method-start">62553 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">62556 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">HandlingWindows</span>
+                <span class="method-start">62556 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">68245 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">30947 ms</span>
+                <span class="method-start">68246 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">30948 ms</span>
+                <span class="method-start">68246 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">30982 ms</span>
+                <span class="method-start">68284 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

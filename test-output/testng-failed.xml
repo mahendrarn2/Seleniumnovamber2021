@@ -7,14 +7,12 @@
         <methods>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
+          <include name="HandlingWindows"/>
           <include name="afterSuite"/>
-          <include name="VerifyalertBox"/>
           <include name="beforeSuite"/>
           <include name="afterTest"/>
           <include name="afterClass"/>
-          <include name="ValidateEnterGMOonline"/>
           <include name="beforeMethod"/>
-          <include name="verifyTheCalculations"/>
           <include name="beforeClass"/>
         </methods>
       </class> <!-- com.testNg.TestNgTestCasesPractice2 -->

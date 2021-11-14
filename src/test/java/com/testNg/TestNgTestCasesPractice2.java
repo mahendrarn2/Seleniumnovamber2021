@@ -3,6 +3,8 @@ package com.testNg;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.utility.ORep;
+import com.utility.constants;
 import com.utility.library;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -12,11 +14,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
@@ -24,7 +32,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
-public class TestNgTestCasesPractice2 extends library{
+public class TestNgTestCasesPractice2 extends library {
 
 	/*
 	 * @Test
@@ -44,28 +52,21 @@ public class TestNgTestCasesPractice2 extends library{
 	@Test(priority = 0)
 	public void ValidateEnterGMOonline() {
 
-		driver.findElement(By.name("bSubmit")).click();
-		driver.findElement(By.name("QTY_TENTS")).clear();
-		driver.findElement(By.name("QTY_TENTS")).sendKeys("5");
-		String OnlineCatalogText = driver.findElement(By.xpath("//h1[contains(text(),'OnLine Catalog')]")).getText();
+		library.findElementByLocator(ORep.ValidateEnterGMOonlineButtonWithName).click();
+		library.findElementByLocator(ORep.TableColumnFieldsClearAndSendKeys).clear();
+		library.findElementByLocator(ORep.TableColumnFieldsClearAndSendKeys).sendKeys("5");
+		String OnlineCatalogText = library.findElementByLocator(ORep.OnlineCatalogText).getText();
 		System.out.println(OnlineCatalogText);
 
-		String OnlineCatalogUnitPrice = driver
-				.findElement(By.xpath("//strong[contains(text(),'Dome Tent')]/../../following-sibling::td ")).getText();
+		String OnlineCatalogUnitPrice = library.findElementByLocator(ORep.OnlineCatalogUnitPrice).getText();
 		System.out.println(OnlineCatalogUnitPrice);
 
-		driver.findElement(By.name("bSubmit")).click();
+		library.findElementByLocator(ORep.ValidateEnterGMOonlineButtonWithName).click();
 
-		String placeOrderUnitPrice = driver
-				.findElement(
-						By.xpath("(//strong[contains(text(),'3 Person Dome Tent')]/../../following-sibling::td)[2]"))
-				.getText();
+		String placeOrderUnitPrice = library.findElementByLocator(ORep.placeOrderUnitPrice).getText();
 		System.out.println(placeOrderUnitPrice);
 
-		String totalPlaceOrderPrice = driver
-				.findElement(
-						By.xpath("(//strong[contains(text(),'3 Person Dome Tent')]/../../following-sibling::td)[3]"))
-				.getText();
+		String totalPlaceOrderPrice = library.findElementByLocator(ORep.totalPlaceOrderPrice).getText();
 
 		totalPlaceOrderPrice = totalPlaceOrderPrice.substring(2).trim();
 
@@ -75,38 +76,32 @@ public class TestNgTestCasesPractice2 extends library{
 		placeOrderUnitPrice = placeOrderUnitPrice.substring(2).trim();
 		System.out.println("placeOrderUnitPrice  " + placeOrderUnitPrice);
 
-		Float CaluculatedTotalPrice = Float.parseFloat(placeOrderUnitPrice) * 5;
+		Float CaluculatedTotalPrice = Float.parseFloat(placeOrderUnitPrice) *constants.CaluculatedTotalPrice1;
 		System.out.println("CaluculatedTotalPrice " + CaluculatedTotalPrice);
 
 		SoftAssert obj = new SoftAssert();
 		obj.assertEquals(CaluculatedTotalPrice, totalPlaceOrderPrice1);
 
-		String ShippingHandle = driver.findElement(By.xpath(
-				"(//strong[contains(text(),'3 Person Dome Tent')]/../../following-sibling::td)[3]/../following-sibling::tr[2]/td[2]"))
-				.getText();
+		String ShippingHandle = library.findElementByLocator(ORep.ShippingHandle).getText();
 		ShippingHandle = ShippingHandle.substring(2).trim();
 		System.out.println("ShippingHandle  " + ShippingHandle);
 
-		String SalesTax = driver.findElement(By.xpath(
-				"(//strong[contains(text(),'3 Person Dome Tent')]/../../following-sibling::td)[3]/../following-sibling::tr[3]/td[2]"))
-				.getText();
+		String SalesTax = library.findElementByLocator(ORep.SalesTax).getText();
 		SalesTax = SalesTax.substring(2).trim();
 		System.out.println("SalesTax  " + SalesTax);
 
 		CaluculatedTotalPrice = CaluculatedTotalPrice + Float.parseFloat(ShippingHandle) + Float.parseFloat(SalesTax);
 		System.out.println("CaluculatedTotalPrice  " + CaluculatedTotalPrice);
 
-		String GrandTotalPrice = driver.findElement(By.xpath(
-				"(//strong[contains(text(),'3 Person Dome Tent')]/../../following-sibling::td)[3]/../following-sibling::tr[4]/td[2]"))
-				.getText();
+		String GrandTotalPrice = library.findElementByLocator(ORep.GrandTotalPrice).getText();
 		GrandTotalPrice = GrandTotalPrice.substring(2).trim();
 		Float GrandTotalPrice1 = Float.parseFloat(GrandTotalPrice);
 		System.out.println("GrandTotalPrice1  " + GrandTotalPrice1);
 
 		Assert.assertEquals(CaluculatedTotalPrice, GrandTotalPrice1);
 
-		driver.findElement(By.name("bSubmit")).click();
-		driver.findElement(By.name("bSubmit")).click();
+		library.findElementByLocator(ORep.ValidateEnterGMOonlineButtonWithName).click();
+		library.findElementByLocator(ORep.ValidateEnterGMOonlineButtonWithName).click();
 		System.out.println("Thread Id" + Thread.currentThread().getId());
 
 		OnlineCatalogUnitPrice = OnlineCatalogUnitPrice.substring(2).trim();
@@ -135,10 +130,57 @@ public class TestNgTestCasesPractice2 extends library{
 	public void verifyTheCalculations() throws InterruptedException {
 
 		Thread.sleep(5000);
-		driver.close();
+		// driver.close();
 
 	};
 
+	@Test(priority = 3)
+
+	public void HandlingFrames() {
+
+		driver.navigate().to(propObj.getProperty("iFramesURL"));
+		WaitForPageLoad();
+		library.SwitchToFramesUsingIdOrName("singleframe");
+		library.findElementByLocator(ORep.HandlingFramesField).sendKeys("I am entering the text");
+		driver.switchTo().defaultContent();
+		library.findElementByLocator(ORep.iFrameWithInAnFrameButton).click();
+		WebElement parentFrameElement = library.findElementByLocator(ORep.parentFrameElement);
+		library.SwitchToFramesUsingWebElement(parentFrameElement);
+		WebElement childFrameElement = library.findElementByLocator(ORep.childFrameElement);
+		library.SwitchToFramesUsingWebElement(childFrameElement);
+		library.findElementByLocator(ORep.HandlingFramesField).sendKeys("Hi I am entering the text");
+		driver.switchTo().defaultContent();
+
+	}
+
+	@Test(priority =4 )
+	public void HandlingWindows() {
+		
+		System.out.println("Inside HandlingWindows");
+		driver.navigate().to(propObj.getProperty("WindowsURL"));
+		WaitForPageLoad();
+		Set<String> AllWindows=driver.getWindowHandles();
+		
+		for (String SingleWindow : AllWindows) {
+			
+			driver.switchTo().window(SingleWindow);
+			String title=driver.getTitle();
+			System.out.println(title);
+			
+			if (title.equals("Cognizant")) {
+				driver.manage().window().maximize();
+				
+			}else if (title.equals("Tech Mahindra")){
+				driver.manage().window().maximize();
+				
+			}else if (title.equals("Tech Mahindra")) {
+				driver.manage().window().maximize();
+				
+			}
+		}
+	} 
+	
+	
 	@BeforeMethod
 	public void beforeMethod() {
 	}
@@ -158,7 +200,7 @@ public class TestNgTestCasesPractice2 extends library{
 	@BeforeTest
 	public void beforeTest() {
 		library.LaunchBrowser();
-		
+
 	}
 
 	@AfterTest
@@ -185,10 +227,29 @@ public class TestNgTestCasesPractice2 extends library{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
 	@AfterSuite
 	public void afterSuite() {
+	}
+
+	// Helper methods
+	public void WaitForPageLoad() {
+
+		ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
+
+			public Boolean apply(WebDriver driver) {
+
+				return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+			}
+
+		};
+
+		// Explicit wait -->Applicable for one webElement
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(pageLoadCondition);
+
 	}
 
 }

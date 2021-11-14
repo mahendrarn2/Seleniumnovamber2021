@@ -49,7 +49,7 @@ public class TestNgTestCasesPractice {
 		System.out.println(OnlineCatalogText);
 
 		String OnlineCatalogUnitPrice = driver
-				.findElement(By.xpath("//strong[contains(text(),'Dome Tent')]/../../following-sibling::td ")).getText();
+				.findElement(By.xpath("//strong[contains(text(),'Dome Tent')]/../../following-sibling::td")).getText();
 		System.out.println(OnlineCatalogUnitPrice);
 
 		driver.findElement(By.name("bSubmit")).click();

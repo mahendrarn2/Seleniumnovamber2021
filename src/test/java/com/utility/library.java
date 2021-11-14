@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -67,5 +69,44 @@ public static void LaunchBrowser() {
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	
 }
+
+public static void  SwitchToFramesUsingIdOrName(String name_id) {
 	
+	driver.switchTo().frame(name_id);
+	
+}
+public static void SwitchToFramesUsingWebElement(WebElement element) {
+	driver.switchTo().frame(element);
+}
+	
+public static WebElement findElementByLocator(String ObjRepLocator) {
+	
+	System.out.println(ObjRepLocator);
+	String locator = ObjRepLocator.split("&")[0];
+	String value = ObjRepLocator.split("&")[1];
+	System.out.println(locator);
+	System.out.println(value);
+	WebElement element =null;
+	
+	By search =null;
+	
+	if (locator.equals("id")) {
+		search=By.id(value);
+	}else if (locator.equals("name")) {
+		search=By.name(value);
+	}else if (locator.equals("className")) {
+		search=By.className(value);
+	}else if (locator.equals("xpath")) {
+		search=By.xpath(value);
+	}else if (locator.equals("linkText")) {
+		search=By.linkText(value);
+	}else if (locator.equals("partialLinkText")) {
+		search=By.partialLinkText(value);
+	}else if (locator.equals("tagName")) {
+		search=By.tagName(value);
+	}
+	
+	return driver.findElement(search);
+}
+
 }

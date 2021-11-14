@@ -1,5 +1,15 @@
-browser=chrome
+browser=firefox
 environment=SIT
 GmoOnlineURL_SIT=http://demo.borland.com/gmopost/
 GmoOnlineURL_UAT=http://demoUAT.borland.com/gmopost/
 AlertURL=https://demoqa.com/alerts
+iFramesURL=http://demo.automationtesting.in/Frames.html
+WindowsURL=https://www.naukri.com/
+WebTableURL=https://editor.datatables.net/examples/inline-editing/simple
+mouseOperationRightClick=http://swisn1.github.io/jQuery-contextMenu/demo.html
+mouseOperationDoubleClick=https://api.jquery.com/dblclick/
+mouseOperationDragAndDrop=https://jqueryui.com/droppable/
+FileUpload=http://demo.automationtesting.in/FileUpload.html
+AutomationRegister=htpp://demo.automationtesting.in/Register.html
+WebtableLastNames=Williamson,Nash
+BrokenLinks=https://demoqa.com/broken
