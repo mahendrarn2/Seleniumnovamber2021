@@ -7,8 +7,8 @@
         <methods>
           <include name="beforeTest"/>
           <include name="afterMethod"/>
-          <include name="HandlingWindows"/>
           <include name="afterSuite"/>
+          <include name="validateCalendar"/>
           <include name="beforeSuite"/>
           <include name="afterTest"/>
           <include name="afterClass"/>

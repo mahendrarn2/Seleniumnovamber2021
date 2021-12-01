@@ -3,16 +3,18 @@
 <suite name="Suite" parallel="methods" thread-count="2">
 	<test name="Test">
 		<classes>
-			<class name="com.testNg.TestNgFlipkartTest">
-				<methods>
-					<include name="ValidateEnterGMOonline"></include>
-				</methods>
-			</class>
+			<!-- <class name="com.testNg.TestNgFlipkartTest">
+			
+			<method>
+			<include name="loginToFlipKartAndLogOut"></include>
+			</method>
+				
+			</class> -->
 
-			<class name="com.testNg.TestNgTestCasesPractice">
+			<class name="com.testNg.TestNgTestCasesPractice2">
 				<methods>
-					<include name="ValidateEnterGMOonline"></include>
-					<include name="VerifyalertBox"></include>
+				<!-- <include name="ValidateEnterGMOonline"></include> -->
+					<include name="HandlingTables"></include>
 				</methods>
 			</class>
 			

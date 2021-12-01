@@ -39,7 +39,7 @@ public class TestNgTestCasesPractice {
 	 * }
 	 */
 
-	@Test(priority = 0)
+	@Test(priority = 0, groups= {"Sanity"})
 	public void ValidateEnterGMOonline() {
 
 		driver.findElement(By.name("bSubmit")).click();
@@ -113,7 +113,7 @@ public class TestNgTestCasesPractice {
 
 	}
 
-	@Test(priority = 1, dependsOnMethods = { "ValidateEnterGMOonline" })
+	@Test(priority = 1, dependsOnMethods = { "ValidateEnterGMOonline" }, groups= {"Sanity"})
 	public void VerifyalertBox() throws InterruptedException {
 		String alert = driver.switchTo().alert().getText();
 		System.out.println(alert);
@@ -137,15 +137,15 @@ public class TestNgTestCasesPractice {
 
 	};
 
-	@BeforeMethod
+	@BeforeMethod (groups= {"Sanity"})
 	public void beforeMethod() {
 	}
 
-	@AfterMethod
+	@AfterMethod 
 	public void afterMethod() {
 	}
 
-	@BeforeClass
+	@BeforeClass (groups= {"Sanity"})
 	public void beforeClass() {
 	}
 
@@ -153,7 +153,7 @@ public class TestNgTestCasesPractice {
 	public void afterClass() {
 	}
 
-	@BeforeTest
+	@BeforeTest (groups= {"Sanity"})
 	public void beforeTest() {
 	}
 
@@ -161,7 +161,7 @@ public class TestNgTestCasesPractice {
 	public void afterTest() {
 	}
 
-	@BeforeSuite
+	@BeforeSuite (groups= {"Sanity"})
 	public void beforeSuite() {
 
 		System.out.println();

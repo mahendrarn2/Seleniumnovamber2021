@@ -36,8 +36,8 @@ public class TestNgFlipkartTest {
 		
 	}
 	
-  @Test (priority=1)
-  public void ValidateEnterGMOonline() throws InterruptedException {
+  @Test 
+  public void loginToFlipKartAndLogOut() throws InterruptedException {
 	  
 	  //driver.findElement(By.name("bSubmit")).click();
 	  //driver.findElement(By.name("QTY_TENTS")).clear();
