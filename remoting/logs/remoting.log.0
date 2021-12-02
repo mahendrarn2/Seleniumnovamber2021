@@ -1,0 +1,10 @@
+Dec 02, 2021 10:50:44 PM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: SurfaceProWindowsSlave
+Dec 02, 2021 10:50:44 PM hudson.remoting.jnlp.Main$CuiListener <init>
+INFO: Jenkins agent is running in headless mode.
+Dec 02, 2021 10:50:44 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 4.10.1
+Dec 02, 2021 10:50:44 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using E:\SeleniumWorkspace\Seleniumnovamber2021\remoting as a remoting work directory
+Dec 02, 2021 10:50:45 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: WebSocket connection open

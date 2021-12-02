@@ -92,11 +92,11 @@ public class Javapractise {
 		 boolean Ige=B1.equalsIgnoreCase(B5);
 		 System.out.println(Ige);
 		 
-		 String[] splt=B5.split("\s",2);
+		 String[] splt=B5.split(" ",2);
 		 for(String w:splt) {
 			 System.out.println(w);
 		 }
-		 String[] splt1=B5.split("\s");
+		 String[] splt1=B5.split(" ");
 		 for(String w:splt1) {
 			 System.out.println(w);
 		 }
