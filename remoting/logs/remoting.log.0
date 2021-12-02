@@ -8,3 +8,5 @@ Dec 02, 2021 10:50:44 PM org.jenkinsci.remoting.engine.WorkDirManager initialize
 INFO: Using E:\SeleniumWorkspace\Seleniumnovamber2021\remoting as a remoting work directory
 Dec 02, 2021 10:50:45 PM hudson.remoting.jnlp.Main$CuiListener status
 INFO: WebSocket connection open
+Dec 02, 2021 10:50:46 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
